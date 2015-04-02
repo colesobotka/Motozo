@@ -1,0 +1,27 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+
+<ion-tabs class="tabs-icon-top tabs-dark">
+
+  <ion-tab title="Garage" icon-off="ion-ios-home-outline" icon-on="ion-ios-home" href="#/motozo/garage">
+    <ion-nav-view name="tab-garage"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="News" icon-off="ion-ios-paper-outline" icon-on="ion-ios-paper" href="#/motozo/news">
+    <ion-nav-view name="tab-news"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="Local" icon-off="ion-ios-search" icon-on="ion-ios-search-strong" href="#/motozo/browse">
+    <ion-nav-view name="tab-browse"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="Chat" icon-off="ion-ios-chatbubble-outline" icon-on="ion-ios-chatbubble" href="#/motozo/chat">
+    <ion-nav-view name="tab-chat"></ion-nav-view>
+  </ion-tab>
+
+
+</ion-tabs>
+

@@ -1,0 +1,59 @@
+/* Empty. Add your own CSS if you like */
+.has-shrinking-subheader {
+  padding-top: 49px;
+}
+
+.item-foot-content {
+  font-size: 30px !important;
+}
+
+.col-center {
+  text-align: center;
+}
+
+.profileAvatar {
+  top: 12px !important;
+  max-width: 50px !important;
+  max-height: 50px !important;
+  width: 50px !important;
+  height: 50px !important;
+}
+
+.ionic-refresher-content {
+  color: white !important;
+}
+
+.spinner svg {
+  stroke: white;
+  fill: white;
+}
+
+.background-dark {
+  background-color: #575A5A;
+  color: white;
+}
+
+.noPadding {
+  margin:0px!important; 
+  padding:0px!important
+}
+
+.picLocation {
+  font-size: 1em !important;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+  text-shadow: 1px 1px #000000;
+}
+
+.picText {
+  font-size: 1em !important;
+  position:absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  text-shadow: 1px 1px #000000;
+}
+
+

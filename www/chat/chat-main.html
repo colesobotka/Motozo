@@ -1,0 +1,18 @@
+<ion-view view-title="Chat">
+<ion-content has-bouncing="true" class="background-dark has-header">
+    <ion-refresher
+      spinner="ios"
+      on-refresh="doRefresh()">
+    </ion-refresher>
+    <ion-list>
+    	<ion-item ng-repeat="chat in chats" class="item-avatar-left" href="#">
+			<img ng-src="{{chat.face}}">
+    		<h2>{{chat.name}}</h2>
+    		<p>{{chat.lastText}}</p>
+    		<ion-option-button class="button-positive" ng-click="share(item)">
+			      <i class="icon ion-trash-a"></i>
+		    </ion-option-button>
+	    </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

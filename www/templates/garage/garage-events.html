@@ -1,0 +1,16 @@
+<ion-view view-title="My Garage">
+<ion-content has-bouncing="true" class="background-dark">
+  <ion-refresher
+    spinner="ios"
+    on-refresh="doRefresh()">
+  </ion-refresher>
+    <ion-list class="noPadding">
+        <ion-item ng-repeat="car in cars" item="car" href="#/motozo/events/{{car.id}}">
+          <div class="imageContainer">
+              <img style="width: 100%" ng-src='{{car.url}}'></img>
+              <span class="picText" >{{car.year}}&nbsp{{car.make}}&nbsp{{car.model}}</span>
+          </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
