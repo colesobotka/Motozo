@@ -122,17 +122,17 @@ angular.module('starter.services', [])
   var events = [{
     id: 0,
     name: 'Muscle Car Extravaganza',
-    url: 'img/TestEvents/carShow1.jpg'
+    url: 'img/TestEvents/carshow1.jpg'
   },
   {
     id: 1,
     name: 'Muscle Car Extravaganza',
-    url: 'img/TestEvents/carShow3.jpg'
+    url: 'img/TestEvents/carshow2.jpg'
   },
   {
     id: 2,
     name: 'Muscle Car Extravaganza',
-    url: 'img/TestEvents/carShow1.jpg'
+    url: 'img/TestEvents/carshow3.jpg'
   }];
   return {
     all: function() {
@@ -200,6 +200,32 @@ angular.module('starter.services', [])
     face: 'img/TestCars/subaru.jpg'
   }, {
     id: 4,
+    name: 'Perry Governor',
+    lastText: 'Look at my mukluks!',
+    face: 'img/TestCars/nissan.jpg'
+  },
+  {
+    id: 5,
+    name: 'Ben Sparrow',
+    lastText: 'You on your way?',
+    face: 'img/TestCars/nissan.jpg'
+  }, {
+    id: 6,
+    name: 'Max Lynx',
+    lastText: 'Hey, it\'s me',
+    face: 'img/TestCars/camaro.jpg'
+  }, {
+    id: 7,
+    name: 'Andrew Jostlin',
+    lastText: 'Did you get the ice cream?',
+    face: 'img/TestCars/lamborghini.jpg'
+  }, {
+    id: 8,
+    name: 'Adam Bradleyson',
+    lastText: 'I should buy a boat',
+    face: 'img/TestCars/subaru.jpg'
+  }, {
+    id: 9,
     name: 'Perry Governor',
     lastText: 'Look at my mukluks!',
     face: 'img/TestCars/nissan.jpg'

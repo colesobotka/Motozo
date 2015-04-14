@@ -1,5 +1,10 @@
 <ion-view view-title="Browse Local">
-  <ion-content has-bouncing="true" class="background-dark has-subheader">
+  <ion-nav-buttons side="right">
+        <button class="button button-clear">
+          <i style="color: orange" class="icon ion-funnel"></i>
+        </button>
+  </ion-nav-buttons>
+  <ion-content scroll-event-interval="5" header-shrink has-bouncing="true" class="background-secondary">
     <ion-refresher
       spinner="ios"
       on-refresh="doRefresh()">
@@ -17,15 +22,15 @@
         <div class="item noPadding">
           <div class="row row-center">  
             <div class="col col-center item-foot-content">
-              <i class="icon ion-ios-calendar"></i><br/>
+              <i class="icon ion-ios-calendar-outline"></i><br/>
               <p>July 21</p>
             </div>
             <div class="col col-center item-foot-content">
-              <i class="icon ion-ios-time"></i><br/>
+              <i class="icon ion-ios-time-outline"></i><br/>
               <p>4:00PM</p>
             </div>
             <div class="col col-center item-foot-content">
-              <i class="icon ion-ios-world"></i><br/>
+              <i class="icon ion-ios-world-outline"></i><br/>
               <p>Bandemere</p>
             </div>
           </div>

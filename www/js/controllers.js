@@ -6,6 +6,14 @@ var dummyBroadcast = function(scope) {
 
 angular.module('starter.controllers', [])
 
+.controller('LoginCtrl', function($scope) {
+
+})
+
+.controller('RegistrationCtrl', function($scope) {
+
+})
+
 .controller('GarageCtrl', function($scope) {
 	$scope.doRefresh = dummyBroadcast($scope);
 })

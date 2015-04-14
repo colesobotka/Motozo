@@ -1,11 +1,14 @@
 <ion-view view-title="Chat">
-<ion-content has-bouncing="true" class="background-dark has-header">
+<ion-content has-bouncing="true" class="background-secondary has-header">
     <ion-refresher
       spinner="ios"
       on-refresh="doRefresh()">
     </ion-refresher>
     <ion-list>
-    	<ion-item ng-repeat="chat in chats" class="item-avatar-left" href="#">
+    	<div class="bar bar-header item-input-inset">
+                <ion-search placeholder="Search a user" filter="search"></ion-search>
+            </div>
+      <ion-item ng-repeat="chat in chats" class="item-avatar-left">
 			<img ng-src="{{chat.face}}">
     		<h2>{{chat.name}}</h2>
     		<p>{{chat.lastText}}</p>

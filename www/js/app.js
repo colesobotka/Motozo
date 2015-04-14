@@ -13,6 +13,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     // for form inputs)
     if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      cordova.plugins.Keyboard.disableScroll(true);
     }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
@@ -24,7 +25,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
-  $ionicConfigProvider.views.maxCache(3);
+  $ionicConfigProvider.views.maxCache(0);
 
 
   // Ionic uses AngularUI Router which uses the concept of states
@@ -32,6 +33,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
+
+  .state('login', {
+    url: "/login",
+    templateUrl: "login/login.html",
+    controller: "LoginCtrl"
+  })
+
+  .state('registration', {
+    url: '/registration',
+    templateUrl: 'login/registration.html',
+    controller: 'RegistrationCtrl'
+  })
 
   // setup an abstract state for the tabs directive
     .state('motozo', {
@@ -113,6 +126,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/motozo/garage');
+  $urlRouterProvider.otherwise('/login');
 
 });
