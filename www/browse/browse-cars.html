@@ -1,60 +1,52 @@
-<ion-view view-title="Browse Local">
-  <ion-nav-buttons side="right">
-        <button class="button button-clear">
-          <i style="color: green" class="icon ion-funnel"></i>
-        </button>
-  </ion-nav-buttons>
-  <ion-content scroll-event-interval="5" header-shrink has-bouncing="true" class="background-secondary">
-    <ion-refresher
-      spinner="ios"
-      on-refresh="doRefresh()">
-    </ion-refresher>
-      <div class="list card" ng-repeat="car in cars" item="car">
-        
-        <div class="item item-avatar">
-          <img class="profileAvatar" style="border-radius: 5% !important;" ng-src="{{car.profileUrl}}">
-          <div class="row row-center noPadding">
-            <div class="col col-80 noPadding">
-              <h2>@Username</h2>
-              <p>
-                <i class="icon ion-record" style="color: #B8E986"></i>
-                Online
-              </p>
-            </div>
-            <div class="col col-20 noPadding" style="text-align: center;">
-              <a>
-                <i class="icon ion-ios-chatbubble-outline" style="font-size: 35px;"></i>
-              </a>
-            </div>
-          </div>
+<ion-content ng-controller="BrowseCarsCtrl" scroll-event-interval="5" header-shrink has-bouncing="true" class="background-secondary">
+  <ion-refresher
+  spinner="ios"
+  on-refresh="doRefresh()">
+  </ion-refresher>
+  <div class="list card" ng-repeat="car in cars" item="car"> 
+    <div class="item item-avatar">
+      <img class="profileAvatar" style="border-radius: 5% !important;" ng-src="{{car.profileUrl}}">
+      <div class="row row-center noPadding">
+        <div class="col col-80 noPadding">
+          <h2>@Username</h2>
+          <p>
+            <i class="icon ion-record" style="color: #B8E986"></i>
+            Online
+          </p>
         </div>
+        <div class="col col-20 noPadding" style="text-align: center;">
+          <a>
+            <i class="icon ion-ios-chatbubble-outline" style="font-size: 35px;"></i>
+          </a>
+        </div>
+      </div>
+    </div>
 
-        <div class="dragImageWrapper" on-drag-left="dragImageLeft()">
-          <div class="item item-image">
-            <img ng-src='{{car.url}}'></img>
-            <div class="picLocation">
-              <i class="icon ion-compass"></i>
-              <span>2 miles away</span>
-            </div>
-            <span class="picText">{{car.year}}&nbsp;{{car.make}}&nbsp;{{car.model}}</span>
-          </div>
-
+    <div class="dragImageWrapper" on-drag-left="dragImageLeft()">
+      <div class="item item-image">
+        <img ng-src='{{car.url}}'></img>
+        <div class="picLocation">
+          <i class="icon ion-compass"></i>
+          <span>2 miles away</span>
+        </div>
+        <span class="picText">{{car.year}}&nbsp;{{car.make}}&nbsp;{{car.model}}</span>
       </div>
 
-        <!--<div class="item tabs tabs-secondary tabs-icon-left" style="display: none">
-          <a class="tab-item" href="#">
-            <i class="icon ion-thumbsup"></i>
-            Like
-          </a>
-          <a class="tab-item" href="#">
-            <i class="icon ion-chatbox"></i>
-            Chat
-          </a>
-          <a class="tab-item" href="#">
-            <i class="icon ion-speakerphone"></i>
-            Report
-          </a>
-        </div>-->
-      </div>
-  </ion-content>
-</ion-view>
+    </div>
+
+    <div class="item tabs tabs-secondary tabs-icon-left" style="display: none">
+      <a class="tab-item" href="#">
+        <i class="icon ion-thumbsup"></i>
+        Like
+      </a>
+      <a class="tab-item" href="#">
+        <i class="icon ion-chatbox"></i>
+        Chat
+      </a>
+      <a class="tab-item" href="#">
+        <i class="icon ion-speakerphone"></i>
+        Report
+      </a>
+    </div>
+  </div>
+</ion-content>

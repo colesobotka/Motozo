@@ -1,25 +1,18 @@
-<ion-view view-title="Browse Local">
-  <ion-nav-buttons side="right">
-        <button class="button button-clear">
-          <i style="color: red" class="icon ion-funnel"></i>
-        </button>
-  </ion-nav-buttons>
-  <ion-content scroll-event-interval="5" header-shrink has-bouncing="true" class="background-secondary">
-    <ion-refresher
-      spinner="ios"
-      on-refresh="doRefresh()">
-    </ion-refresher>
-    <div class="list card" ng-repeat="club in clubs" item="club">
-      <div class="item col-center">
-        <h2 style="font-size: 20px !important;">{{club.name}}</h2>
-      </div>
-      <div class="item item-image">
-        <img ng-src='{{club.url}}'></img>
-      </div>
-      <div class="item item-text-wrap">
-        The description of the club goes here. We should probably limit it to a couple of lines so we don't bloat the screen.
-      </div>
-    </div>
+<ion-content ng-controller="BrowseClubsCtrl" scroll-event-interval="5" header-shrink has-bouncing="true" class="background-secondary">
+   <ion-refresher
+     spinner="ios"
+     on-refresh="doRefresh()">
+   </ion-refresher>
 
-  </ion-content>
-</ion-view>
+   <div class="list card" ng-repeat="club in clubs" item="club">
+      <div class="item col-center">
+      <h2 style="font-size: 20px !important;">{{club.name}}</h2>
+    </div>
+      <div class="item item-image">
+      <img ng-src='{{club.url}}'></img>
+    </div>
+    <div class="item item-text-wrap">
+      The description of the club goes here. We should probably limit it to a couple of lines so we don't bloat the screen.
+    </div>
+  </div>
+</ion-content>

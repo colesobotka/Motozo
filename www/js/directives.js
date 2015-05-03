@@ -1,19 +1,17 @@
 angular.module('motozo.directives', [])
-.directive('tabState', function($state, $ionicHistory) {
+.directive('tabState', function() {
 
     return {
       restrict: 'A',
+      scope: false,
       link: function (scope, element, attrs) {
         element.on('click', function() {
-          $ionicHistory.nextViewOptions({
-            disableAnimate: true,
-            disableBack: true,
-            historyRoot: true
+          scope.$apply(function(){
+           scope.tabState = attrs.tabState;
           });
-          $state.go(attrs.tabState);
         });
         scope.$watch(function() {
-          return $state.current.name;
+          return scope.tabState;
         }, function(stateName) {
            if(stateName === attrs.tabState) {
              element.addClass('active');

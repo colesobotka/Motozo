@@ -1,6 +1,7 @@
 {
   "name": "ionic",
-  "codename": "osmium-ostrich",
+  "version": "1.0.0-rc.5",
+  "codename": "tungsten-turkey",
   "homepage": "https://github.com/driftyco/ionic",
   "authors": [
     "Max Lynch <max@drifty.com>",
@@ -33,13 +34,13 @@
     "angular-sanitize": "1.3.13",
     "angular-ui-router": "0.2.13"
   },
-  "_release": "a59fa61475",
+  "_release": "1.0.0-rc.5",
   "_resolution": {
-    "type": "branch",
-    "branch": "master",
-    "commit": "a59fa614756f828e15c2142c4d176ed3a6be3aef"
+    "type": "version",
+    "tag": "v1.0.0-rc.5",
+    "commit": "3c33ba49b3563af37465d8196c9f38743a1d38a4"
   },
   "_source": "git://github.com/driftyco/ionic-bower.git",
-  "_target": "master",
+  "_target": "1.0.0-rc.5",
   "_originalSource": "driftyco/ionic-bower"
 }

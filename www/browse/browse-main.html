@@ -1,16 +1,26 @@
-<ion-view>
+<ion-view view-title="Local">
+  <ion-nav-buttons side="right">
+          <a class="button button-icon icon ion-ios-star-outline"></a>
+          <a ui-sref="options" class="button button-icon icon ion-android-funnel"></a>
+    </ion-nav-buttons>
   <div class="tabs-striped tabs-top tabs-background-dark tabs-color-light">
       <div class="tabs header-shrink">
-        <a tab-state="motozo.browse.cars" class="tab-item" href="#">
-          Autos
-        </a>
-        <a tab-state="motozo.browse.events" class="tab-item" href="#">
-          Events
-        </a>
-        <a tab-state="motozo.browse.clubs" class="tab-item" href="#">
-          Clubs
-        </a>
-      </div>
-    </div>
-  <ion-nav-view name="content-view"></ion-nav-view>
+       <a tab-state="autos" class="tab-item" href="">
+         Autos
+       </a>
+       <a tab-state="events" class="tab-item" href="">
+         Events
+       </a>
+       <a tab-state="clubs" class="tab-item" href="">
+         Clubs
+       </a>
+     </div>
+   </div>
+
+    <ng-include src="'browse/browse-cars.html'" ng-if="tabState == 'autos'"></ng-include>
+
+    <ng-include src="'browse/browse-events.html'" ng-if="tabState == 'events'"></ng-include>
+
+    <ng-include src="'browse/browse-clubs.html'" ng-if="tabState == 'clubs'"></ng-include>
+
 </ion-view>

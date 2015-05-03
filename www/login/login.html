@@ -1,11 +1,14 @@
-<ion-view view-title="Login" class="background-login">
-
-	<ion-content class="has-header" has-bouncing="true">
+<ion-view hide-nav-bar="true" class="background-login">
+	<ion-content class="has-header">
+		<div class="center">
+			<h2 class="light">Sign in to</h2>
+		</div>
 		<div class="logo-login">
 			<img style="width: 100%" src="img/logo.png"></img>
 		</div>
 		<div class="center">
-			<a style="text-decoration: none;" class="balanced" href="#/registration">create account</a>
+			<span class="light">create a</span>
+			<a style="text-decoration: none;" class="balanced" ui-sref="registration">new account</a>
 		</div>
 		<div class="list list-inset">
 		  <label class="item item-input">
@@ -20,19 +23,19 @@
 	    </div>
 	    <div class="row" style="margin-top: 40px;">
 	    	<div class="col center">
-	    		<div class="bg-facebook social-button-round">
+	    		<a class="bg-facebook social-button-round" ng-click="socialLogin('facebook')">
 	    			<i class="ion-social-facebook"></i>
-	    		</div>	
+	    		</a>	
 	    	</div>
 	    	<div class="col center">
-	    		<div class="bg-twitter social-button-round">
+	    		<a class="bg-twitter social-button-round" ng-click="socialLogin('twitter')">
 	    			<i class="ion-social-twitter"></i>
-	    		</div>
+	    		</a>
 	    	</div>
 	    	<div class="col center">
-	    		<div class="bg-google social-button-round">
+	    		<a class="bg-google social-button-round" ng-click="socialLogin('google')">
 	    			<i class="ion-social-google"></i>
-	    		</div>
+	    		</a>
 	    	</div>
 	    </div>
 	</ion-content>
