@@ -1,6 +1,6 @@
 {
   "name": "ionTabs",
-  "app_id": "",
+  "app_id": "06190413",
   "gulpStartupTasks": [
     "sass",
     "watch"

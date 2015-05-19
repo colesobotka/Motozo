@@ -14,7 +14,7 @@ angular.module('motozo.controllers', [])
 
 })
 
-.controller('GarageCtrl', function($scope, Fb, $firebaseObject, $cordovaCamera, $jrCrop) {
+.controller('GarageCtrl', function($scope, Fb, $firebaseObject, $cordovaCamera, $jrCrop, $ionicLoading) {
 	console.log('in garage ctrl');
 	$scope.doRefresh = dummyBroadcast($scope);
 
@@ -28,6 +28,10 @@ angular.module('motozo.controllers', [])
 
 
     $scope.upload = function() {
+      $ionicLoading.show({
+        template: 'Please wait',
+        scope: $scope
+      });
         var options = {
             quality : 75,
             destinationType : Camera.DestinationType.DATA_URL,
@@ -40,6 +44,7 @@ angular.module('motozo.controllers', [])
         $cordovaCamera.getPicture(options).then(function(imageUrl) {
             imageUrl = 'data:image/jpeg;base64,' + imageUrl;
             //console.log("after: " + imageUrl);
+            $ionicLoading.hide();
             $jrCrop.crop({
 			    url: imageUrl,
 			    width: 300,
@@ -51,8 +56,12 @@ angular.module('motozo.controllers', [])
 			    fbImage.image = canvasDataURL;
 
             	fbImage.$save().then(function() {
-                	
+                	$scope.profileImage = fbImage;
+                	//Do something to indicate image saved
             	});
+			}, function (error) {
+				console.log("Error getting image from library", error);
+				$ionicLoading.hide();
 			});
 
 
