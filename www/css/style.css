@@ -164,4 +164,9 @@
   text-shadow: 1px 1px #000000;
 }
 
+.noborder {
+  border:none !important;
+  border-width: 0px !important;
+}
+
 

@@ -1,0 +1,32 @@
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-dark">
+            <ion-nav-back-button class="button-clear">
+                <i class="ion-ios-arrow-back"></i> Back
+            </ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button menu-toggle="left" class="button button-icon button-clear ion-navicon">
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="main-view"></ion-nav-view>
+    </ion-side-menu-content>
+
+    <ion-side-menu side="left">
+        <header class="bar bar-header bar-dark">
+                <div class="title">Motozo Logo</div>
+            </header>
+        <ion-content class="has-header">
+            <ul class="list dark">
+                <a menu-close class="item item-dark item-icon-left noborder" ui-sref="main.options">
+                    <i class="icon ion-gear-b"></i>
+                    <span>Options</span>
+                </a>
+                <a menu-close class="item item-dark item-icon-left noborder" href="#" ng-click="logout()">
+                    <i class="icon ion-log-out"></i>
+                    <span>Logout</span>
+                </a>
+            </ul>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

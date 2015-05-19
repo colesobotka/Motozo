@@ -1,0 +1,27 @@
+<ion-view view-title="My Garage">
+<ion-content class="background-primary has-header">
+    <div class="row noPadding">
+    	<div class="col noPadding">
+    		<img class="profileImage" ng-src="data:image/jpeg;base64,{{profileImage.image}}"></img>
+    		<i style="position:absolute; top: 5px; right:15px; font-size: 35px;" class="icon ion-ios-camera-outline" ng-click="upload()"></i>
+    	</div>
+    </div>
+    <div class="list">
+    	<a class="item item-icon-left item-dark item-icon-right" style="border-top: none;" ui-sref="main.tabs.myCars">
+  			<i class="icon ion-model-s"></i>
+  			<h2 class="light">My Cars</h2>
+  			<i class="icon ion-chevron-right icon-accessory"></i>
+		</a>
+		<a class="item item-icon-left item-icon-right item-dark" ui-sref="main.tabs.myEvents">
+  			<i class="icon ion-ios-flag-outline"></i>
+  			<h2 class="light">My Events</h2>
+  			<i class="icon ion-chevron-right icon-accessory"></i>
+		</a>
+		<a class="item item-icon-left item-icon-right item-dark" ui-sref="main.tabs.myClubs">
+  			<i class="icon ion-ios-people-outline"></i>
+  			<h2 class="light">My Clubs</h2>
+  			<i class="icon ion-chevron-right icon-accessory"></i>
+		</a>
+	</div>
+  </ion-content>
+</ion-view>
