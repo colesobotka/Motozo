@@ -14,8 +14,14 @@ angular.module('motozo.controllers', [])
 
 })
 
-.controller('GarageCtrl', function($scope, Fb, $firebaseObject, $cordovaCamera, $jrCrop, $ionicLoading) {
+.controller('GarageCtrl', function($scope, Fb, $firebaseObject, 
+	$cordovaCamera, $jrCrop, $ionicLoading) {
 	console.log('in garage ctrl');
+	
+	var cropWidth = 300;
+	var cropHeight = 200;
+
+
 	$scope.doRefresh = dummyBroadcast($scope);
 
     $scope.profileImage = {};
@@ -33,7 +39,7 @@ angular.module('motozo.controllers', [])
         scope: $scope
       });
         var options = {
-            quality : 75,
+            quality : 80,
             destinationType : Camera.DestinationType.DATA_URL,
             sourceType : Camera.PictureSourceType.PHOTOLIBRARY,
             allowEdit : false,
@@ -47,18 +53,30 @@ angular.module('motozo.controllers', [])
             $ionicLoading.hide();
             $jrCrop.crop({
 			    url: imageUrl,
-			    width: 300,
-			    height: 200
+			    width: cropWidth,
+			    height: cropHeight
 			}).then(function(canvas) {
-			    // success!
 			    var canvasDataURL = canvas.toDataURL('image/jpeg');
-			    canvasDataURL = canvasDataURL.replace('data:image/jpeg;base64,', '');
-			    fbImage.image = canvasDataURL;
+			    angular.element('<img />')
+			    .bind('load', function (e) {
+			    	console.log('bound');
+			    	var scaledCanvas = document.createElement('canvas');
+			    	scaledCanvas.width = cropWidth;
+			    	scaledCanvas.height = cropHeight;
+				    var scaledCtx = scaledCanvas.getContext('2d')
+				    scaledCtx.drawImage(this, 0, 0, cropWidth, cropHeight);
 
-            	fbImage.$save().then(function() {
-                	$scope.profileImage = fbImage;
-                	//Do something to indicate image saved
-            	});
+			    	saveDateURL = scaledCanvas.toDataURL('image/jpeg').replace('data:image/jpeg;base64,', '');
+
+				    fbImage.image = saveDateURL;
+
+	            	fbImage.$save().then(function() {
+		            	$scope.profileImage = fbImage;
+	                	//Do something to indicate image saved
+	            	});
+			    })
+			    .prop('src', canvasDataURL);
+
 			}, function (error) {
 				console.log("Error getting image from library", error);
 				$ionicLoading.hide();
@@ -70,15 +88,6 @@ angular.module('motozo.controllers', [])
         }, function(error) {
             console.error(error);
         });
-
-
-        /*$cordovaCamera.getPicture(options).then(function(imageData) {
-            syncArray.$add({image: imageData}).then(function() {
-                alert("Image has been uploaded");
-            });
-        }, function(error) {
-            console.error(error);
-        });*/
     };
 
 })
