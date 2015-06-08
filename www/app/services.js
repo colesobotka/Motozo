@@ -19,6 +19,7 @@ angular.module('motozo.services', ['firebase'])
     id: 0,
     url: "img/TestCars/camaro.jpg",
     profileUrl: "img/TestAvatars/1.jpg",
+    username: "mRogers",
     year: "2010",
     make: "Camaro",
     model: "SS"
@@ -27,22 +28,25 @@ angular.module('motozo.services', ['firebase'])
     id: 1,
     url: "img/TestCars/ferrari.jpg",
     profileUrl: "img/TestAvatars/2.jpg",
+    username: "f430Fan",
     year: "2009",
     make: "Ferrari",
-    model: "Sumthin"
+    model: "f430"
   },
   {
     id: 2,
     url: "img/TestCars/lamborghini.jpg",
     profileUrl: "img/TestAvatars/3.jpg",
+    username: "mRogers",
     year: "2009",
     make: "Ferrari",
-    model: "Sumthin"
+    model: "f430"
   },
   {
     id: 3,
     url: "img/TestCars/mustang.jpg",
     profileUrl: "img/TestAvatars/4.jpg",
+    username: "mRogers",
     year: "2009",
     make: "Ferrari",
     model: "Sumthin"
@@ -51,6 +55,7 @@ angular.module('motozo.services', ['firebase'])
     id: 4,
     url: "img/TestCars/nissan.jpg",
     profileUrl: "img/TestAvatars/1.jpg",
+    username: "mRogers",
     year: "2009",
     make: "Ferrari",
     model: "Sumthin"
@@ -59,6 +64,7 @@ angular.module('motozo.services', ['firebase'])
     id: 5,
     url: "img/TestCars/subaru.jpg",
     profileUrl: "img/TestAvatars/2.jpg",
+    username: "mRogers",
     year: "2009",
     make: "Ferrari",
     model: "Sumthin"
@@ -66,6 +72,7 @@ angular.module('motozo.services', ['firebase'])
     id: 6,
     url: "img/TestCars/camaro.jpg",
     profileUrl: "img/TestAvatars/3.jpg",
+    username: "mRogers",
     year: "2009",
     make: "Ferrari",
     model: "Sumthin"
@@ -74,6 +81,7 @@ angular.module('motozo.services', ['firebase'])
     id: 7,
     url: "img/TestCars/ferrari.jpg",
     profileUrl: "img/TestAvatars/4.jpg",
+    username: "mRogers",
     year: "2009",
     make: "Ferrari",
     model: "Sumthin"
@@ -82,6 +90,7 @@ angular.module('motozo.services', ['firebase'])
     id: 8,
     url: "img/TestCars/lamborghini.jpg",
     profileUrl: "img/TestAvatars/1.jpg",
+    username: "mRogers",
     year: "2009",
     make: "Ferrari",
     model: "Sumthin"
@@ -90,6 +99,7 @@ angular.module('motozo.services', ['firebase'])
     id: 9,
     url: "img/TestCars/mustang.jpg",
     profileUrl: "img/TestAvatars/2.jpg",
+    username: "mRogers",
     year: "2009",
     make: "Ferrari",
     model: "Sumthin"
@@ -98,6 +108,7 @@ angular.module('motozo.services', ['firebase'])
     id: 10,
     url: "img/TestCars/nissan.jpg",
     profileUrl: "img/TestAvatars/3.jpg",
+    username: "mRogers",
     year: "2009",
     make: "Ferrari",
     model: "Sumthin"
@@ -106,6 +117,7 @@ angular.module('motozo.services', ['firebase'])
     id: 11,
     url: "img/TestCars/subaru.jpg",
     profileUrl: "img/TestAvatars/4.jpg",
+    username: "mRogers",
     year: "2009",
     make: "Ferrari",
     model: "Sumthin"

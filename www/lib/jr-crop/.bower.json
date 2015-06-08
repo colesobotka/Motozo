@@ -28,6 +28,5 @@
   },
   "_source": "git://github.com/JrSchild/jr-crop.git",
   "_target": "~1.0.0",
-  "_originalSource": "jr-crop",
-  "_direct": true
+  "_originalSource": "jr-crop"
 }

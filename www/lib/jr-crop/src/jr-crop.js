@@ -77,7 +77,6 @@ function($ionicModal, $rootScope, $q) {
         }
       }
 
-      console.log("width: " + this.imgWidth + " height: " + this.imgHeight);
       var centerX = (this.imgWidth - this.options.width) / 2;
       var centerY = (this.imgHeight - this.options.height) / 2;
 

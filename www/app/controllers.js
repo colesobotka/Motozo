@@ -43,6 +43,8 @@ angular.module('motozo.controllers', [])
             destinationType : Camera.DestinationType.DATA_URL,
             sourceType : Camera.PictureSourceType.PHOTOLIBRARY,
             allowEdit : false,
+            targetWidth: 500,
+            targetHeight: 500,
             encodingType: Camera.EncodingType.JPEG,
             saveToPhotoAlbum: false,
             correctOrientation: true
@@ -54,28 +56,19 @@ angular.module('motozo.controllers', [])
             $jrCrop.crop({
 			    url: imageUrl,
 			    width: cropWidth,
-			    height: cropHeight
+			    height: cropHeight,
+			    resizeWidth: cropWidth,
+			    resizeHight: cropHeight
 			}).then(function(canvas) {
-			    var canvasDataURL = canvas.toDataURL('image/jpeg');
-			    angular.element('<img />')
-			    .bind('load', function (e) {
-			    	console.log('bound');
-			    	var scaledCanvas = document.createElement('canvas');
-			    	scaledCanvas.width = cropWidth;
-			    	scaledCanvas.height = cropHeight;
-				    var scaledCtx = scaledCanvas.getContext('2d')
-				    scaledCtx.drawImage(this, 0, 0, cropWidth, cropHeight);
+				
+			    var canvasDataURL = canvas.toDataURL('image/jpeg').replace('data:image/jpeg;base64,', '');
+			    console.log(canvas.width + " " + canvas.height);
 
-			    	saveDateURL = scaledCanvas.toDataURL('image/jpeg').replace('data:image/jpeg;base64,', '');
-
-				    fbImage.image = saveDateURL;
-
-	            	fbImage.$save().then(function() {
-		            	$scope.profileImage = fbImage;
+			    fbImage.image = canvasDataURL;
+            	fbImage.$save().then(function() {
+	            	$scope.profileImage = fbImage;
 	                	//Do something to indicate image saved
 	            	});
-			    })
-			    .prop('src', canvasDataURL);
 
 			}, function (error) {
 				console.log("Error getting image from library", error);
@@ -86,6 +79,7 @@ angular.module('motozo.controllers', [])
 
 
         }, function(error) {
+            $ionicLoading.hide();
             console.error(error);
         });
     };

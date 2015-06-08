@@ -84,12 +84,8 @@ function($ionicModal, $rootScope, $q) {
         }
       }
 
-      //alert("scale:" + this.scale);
       var centerX = (this.imgWidth - this.options.width) / 2;
       var centerY = (this.imgHeight - this.options.height) / 2;
-
-      //alert("width:" + this.imgWidth + " centerX:" + centerX);
-      //alert("height:" + this.imgHeight + " centerY" + centerY);
 
       this.posX = this.last_posX = -centerX;
       this.posY = this.last_posY = -centerY;

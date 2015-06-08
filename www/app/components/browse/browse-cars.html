@@ -8,7 +8,7 @@
       <img class="profileAvatar" style="border-radius: 5% !important;" ng-src="{{car.profileUrl}}">
       <div class="row row-center noPadding">
         <div class="col col-80 noPadding">
-          <h2>@Username</h2>
+          <h2>@{{car.username}}</h2>
           <p>
             <i class="icon ion-record" style="color: #B8E986"></i>
             Online
@@ -25,10 +25,10 @@
     <div class="dragImageWrapper" on-drag-left="dragImageLeft()">
       <div class="item item-image">
         <img ng-src='{{car.url}}'></img>
-        <div class="picLocation">
+        <!--<div class="picLocation">
           <i class="icon ion-compass"></i>
           <span>2 miles away</span>
-        </div>
+        </div>-->
         <span class="picText">{{car.year}}&nbsp;{{car.make}}&nbsp;{{car.model}}</span>
       </div>
 
